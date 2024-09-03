@@ -1,0 +1,77 @@
+programa {
+  funcao inicio() {
+     cadeia nome, usuario, senha
+        inteiro opcao, cpf, carro, pagamento
+
+        escreva("*      Loja Automotiva      *\n")
+
+        enquanto (verdadeiro) {
+            escreva("\n1 - Para entrar no sistema")
+            escreva("\n2 - Para sair do sistema: ")
+            leia(opcao)
+
+            se (opcao == 1) {
+                escreva(" Bem-vindo ao sistema\n")
+                
+                escreva(" Digite seu nome: ")
+                leia(nome)
+                escreva(" Bem-vindo(a), ", nome , "\n Digite seu CPF: ")
+                leia(cpf)
+                escreva(" Digite seu usuário: ")
+                leia(usuario)
+                escreva(" Digite sua senha: ")
+                leia(senha)
+                
+                se (usuario == "usuario123" e senha == "senha123") {
+                    escreva(" Acesso concedido. Bem-vindo(a)! ", nome)
+                    
+                    // Menu de produtos após o login bem-sucedido
+                    escreva("\n Escolha um produto:\n1 - Para-choque R$150,00\n2 - Pneu R$300,00\n3 - Tapete R$50,00\n4 - Farol R$132,50\nDigite: ")
+                    leia(carro)
+                    
+                    escolha (carro) {
+                        caso 1:
+                            escreva("Você comprou o Para-choque. Parabéns!\n")
+                            pare
+                        caso 2:
+                            escreva("Você comprou o Pneu. Parabéns!\n")
+                            pare
+                        caso 3:
+                            escreva("Você comprou o Tapete. Parabéns!\n")
+                            pare
+                        caso 4:
+                            escreva("Você comprou o Farol. Parabéns!\n")
+                            pare
+                        caso contrario:
+                            escreva("Opção de produto inválida.")
+
+                    }
+                    
+                    // Menu de pagamento
+                    escreva("\nEscolha a forma de pagamento:\n1- Cartão de Crédito\n2- Cartão de Débito\n3- Pix\nDigite: ")
+                    leia(pagamento)
+
+                    escolha(pagamento) {
+                        caso 1:
+                            escreva("Pagamento realizado com cartão de crédito.")
+                            pare
+                        caso 2:
+                            escreva("Pagamento realizado com cartão de débito.")
+                            pare
+                        caso 3:
+                            escreva("Pagamento realizado via Pix.")
+                            pare
+                        caso contrario:
+                            escreva("Opção de pagamento inválida.")
+                    }
+                    
+                } senao { 
+                    escreva(" Acesso negado.")
+                }
+            } senao {
+                escreva(" Até logo!")
+                pare
+            }
+        }
+    }
+}
